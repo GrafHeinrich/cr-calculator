@@ -17,13 +17,28 @@
 
             <div class="col-md-8">
                 <div id="crDisplay">
-
+                    
                 </div>
 
             </div>
 
             <div class="col-md-4">
-                <button class="btn btn-default" onclick="clickFunction()">Click</button>
+                <div class="form-group">
+                    <label for="select" class="col-lg-4 control-label">Choose a CR:</label>
+                    <div class="col-lg-10">
+                        <select class="form-control" id="select" onchange="giveCRStats(this.value)">
+                        <option value=0>0</option>
+                        <option value=1>1/8</option>
+                        <option value=2>1/4</option>
+                        <option value=3>1/2</option>
+                        <option value=4>1</option>
+                        </select>
+                        <br>
+                        <!-- <button class="btn btn-primary" onclick="giveCRStats(this.value)">Click</button> -->
+                    </div>
+                    
+                </div>
+                
             </div>
 
         </div>
