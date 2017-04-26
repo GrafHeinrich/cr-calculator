@@ -8,7 +8,7 @@
     <body onload="giveCRStats(0)">
     <div class="container">
         <div class="jumbotron">
-            <h1>Stats-Calculator for DnD 5e</h1>
+            <h1>Monster Statistics-Calculator for DnD 5e</h1>
             <p>Choose some values and get the matching other ones.</p>
             
         </div>
@@ -16,6 +16,7 @@
         <div class="row">
 
             <div class="col-md-8">
+                <div class="row">
                     <div class="col-md-4">
                         <div class="panel panel-primary">
                         <div class="panel-heading">Challenge Rating</div>
@@ -23,15 +24,15 @@
                             0
                         </div>
                         </div>
-
+                    </div>
+                    <div class="col-md-4">
                         <div class="panel panel-primary">
                         <div class="panel-heading">Proficiency Bonus</div>
                         <div class="panel-body" id="profOut">
                             0
                         </div>
-                        </div>
+                        </div>        
                     </div>
-
                     <div class="col-md-4">
                         <div class="panel panel-primary">
                         <div class="panel-heading">Armor Class</div>
@@ -39,13 +40,17 @@
                             0
                         </div>
                         </div>
-
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-4">
                         <div class="panel panel-primary">
                         <div class="panel-heading">Hit Points (min-max)</div>
                         <div class="panel-body" id="hpOut">
                             0
                         </div>
-                        </div>
+                        </div>       
                     </div>
                     <div class="col-md-4">
                         <div class="panel panel-primary">
@@ -54,14 +59,18 @@
                             0
                         </div>
                         </div>
-
+                    </div>
+                    <div class="col-md-4">
                         <div class="panel panel-primary">
-                        <div class="panel-heading">Damager per round (min-max)</div>
+                        <div class="panel-heading">Damage per round (min-max)</div>
                         <div class="panel-body" id="dprOut">
                             0
                         </div>
                         </div>
                     </div>
+                </div>
+                
+                <div class="row">
                     <div class="col-md-4">
                         <div class="panel panel-primary">
                         <div class="panel-heading">Save Difficulty Check</div>
@@ -70,7 +79,16 @@
                         </div>
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-primary">
+                        <div class="panel-heading">Experience Points</div>
+                        <div class="panel-body" id="xpOut">
+                            0
+                        </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
             <div class="col-md-4">
                 <div class="form-group">
@@ -122,8 +140,6 @@
                 
             </div>
         </div>
-
         </div>
-    </div>
     </body>
 </html>

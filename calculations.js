@@ -14,6 +14,7 @@ function giveCRStats (crIn) {
         var dprlow = crThreshold[crIn].dprlow;
         var dprhigh = crThreshold[crIn].dprhigh;
         var sdc = crThreshold[crIn].sdc;
+        var xp = crThreshold[crIn].xp;
 
         document.getElementById('crOut').innerHTML = cr;
         document.getElementById('profOut').innerHTML = prof;
@@ -22,6 +23,7 @@ function giveCRStats (crIn) {
         document.getElementById('atkOut').innerHTML = atk;
         document.getElementById('dprOut').innerHTML = dprlow + ' - ' + dprhigh;
         document.getElementById('sdcOut').innerHTML = sdc;
+        document.getElementById('xpOut').innerHTML = xp;
 
         }
     };
