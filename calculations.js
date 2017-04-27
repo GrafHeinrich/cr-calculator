@@ -1,32 +1,42 @@
-function giveCRStats (crIn) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-        var response = JSON.parse(xhttp.responseText);
-        var crThreshold = response.challengeThresholds;
 
-        var cr = crThreshold[crIn].cr;
-        var prof = crThreshold[crIn].prof;
-        var ac = crThreshold[crIn].ac;
-        var hplow = crThreshold[crIn].hplow;
-        var hphigh = crThreshold[crIn].hphigh;
-        var atk = crThreshold[crIn].atk;
-        var dprlow = crThreshold[crIn].dprlow;
-        var dprhigh = crThreshold[crIn].dprhigh;
-        var sdc = crThreshold[crIn].sdc;
-        var xp = crThreshold[crIn].xp;
+$(function(){
 
-        document.getElementById('crOut').innerHTML = cr;
-        document.getElementById('profOut').innerHTML = prof;
-        document.getElementById('acOut').innerHTML = ac;
-        document.getElementById('hpOut').innerHTML = hplow + ' - ' + hphigh;
-        document.getElementById('atkOut').innerHTML = atk;
-        document.getElementById('dprOut').innerHTML = dprlow + ' - ' + dprhigh;
-        document.getElementById('sdcOut').innerHTML = sdc;
-        document.getElementById('xpOut').innerHTML = xp;
+ var response;
+ 
+ $.get("cr-info.json", function(data, status){
+        var dataResponse = data.challengeThresholds;
+        makeGlobal(dataResponse);
+    });
 
-        }
-    };
-    xhttp.open("GET", "cr-info.json", true);
-    xhttp.send();
+$("#select").change(setStats(1));
+
+});
+
+function makeGlobal(data) { 
+      this.response = data;
+      //console.log(this.response);
+}
+
+function setStats(crIn) {
+    var cr = this.response[crIn].cr;
+    var prof = this.response[crIn].prof;
+    var ac = this.response[crIn].ac;
+    var hplow = this.response[crIn].hplow;
+    var hphigh = this.response[crIn].hphigh;
+    var atk = this.response[crIn].atk;
+    var dprlow = this.response[crIn].dprlow;
+    var dprhigh = this.response[crIn].dprhigh;
+    var sdc = this.response[crIn].sdc;
+    var xp = this.response[crIn].xp;
+
+    document.getElementById('crOut').innerHTML = cr;
+    document.getElementById('profOut').innerHTML = prof;
+    document.getElementById('acOut').innerHTML = ac;
+    document.getElementById('hpOut').innerHTML = hplow + ' - ' + hphigh;
+    document.getElementById('atkOut').innerHTML = atk;
+    document.getElementById('dprOut').innerHTML = dprlow + ' - ' + dprhigh;
+    document.getElementById('sdcOut').innerHTML = sdc;
+    document.getElementById('xpOut').innerHTML = xp;
+
+    console.log("Data ready");
 }
